@@ -16,6 +16,8 @@ const App = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  const instagramUrl = "https://www.instagram.com/zahsstudio?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==";
+
   return (
     <div className="min-h-screen flex flex-col font-sans">
       {/* Navigation */}
@@ -28,7 +30,11 @@ const App = () => {
             </button>
             
             {/* Desktop Menu */}
-            <div className="hidden md:flex space-x-8 items-center">
+            <div className="hidden md:flex space-x-6 lg:space-x-8 items-center">
+              <a href="tel:+19058784247" className="text-gray-600 hover:text-pink-600 transition font-medium flex items-center group">
+                <i className="fas fa-phone-alt mr-2 text-sm text-pink-400 group-hover:text-pink-600"></i>
+                +1 905-878-4247
+              </a>
               <button onClick={() => scrollToSection('services')} className="text-gray-600 hover:text-pink-600 transition">Services</button>
               <button onClick={() => scrollToSection('gallery')} className="text-gray-600 hover:text-pink-600 transition">Work</button>
               <button onClick={() => scrollToSection('about')} className="text-gray-600 hover:text-pink-600 transition">About</button>
@@ -48,8 +54,11 @@ const App = () => {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden bg-white border-t border-gray-100 absolute w-full">
-            <div className="px-4 pt-2 pb-4 space-y-1 shadow-lg">
+          <div className="md:hidden bg-white border-t border-gray-100 absolute w-full shadow-xl">
+            <div className="px-4 pt-2 pb-4 space-y-1">
+              <a href="tel:+19058784247" className="block w-full text-left px-3 py-3 text-gray-600 hover:bg-pink-50 hover:text-pink-600 rounded-md font-medium">
+                 <i className="fas fa-phone-alt mr-2 text-pink-400"></i> Call +1 905-878-4247
+              </a>
               <button onClick={() => scrollToSection('services')} className="block w-full text-left px-3 py-3 text-gray-600 hover:bg-pink-50 hover:text-pink-600 rounded-md">Services</button>
               <button onClick={() => scrollToSection('gallery')} className="block w-full text-left px-3 py-3 text-gray-600 hover:bg-pink-50 hover:text-pink-600 rounded-md">Our Work</button>
               <button onClick={() => scrollToSection('about')} className="block w-full text-left px-3 py-3 text-gray-600 hover:bg-pink-50 hover:text-pink-600 rounded-md">About</button>
@@ -157,7 +166,7 @@ const App = () => {
             <GalleryImage src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=400&q=80" alt="Facial" />
           </div>
           <div className="text-center mt-8">
-            <a href="https://instagram.com" target="_blank" rel="noreferrer" className="inline-flex items-center text-pink-600 font-semibold hover:text-pink-700">
+            <a href={instagramUrl} target="_blank" rel="noreferrer" className="inline-flex items-center text-pink-600 font-semibold hover:text-pink-700">
               <i className="fab fa-instagram mr-2"></i> See more on Instagram @zahsstudio
             </a>
           </div>
@@ -337,8 +346,16 @@ const App = () => {
             </form>
 
             <div className="mt-8 pt-8 border-t border-gray-100 text-center">
-              <p className="text-gray-600 mb-2"><i className="fas fa-map-marker-alt text-pink-500 mr-2"></i> Milton, Ontario, Canada</p>
-              <a href="https://instagram.com" className="text-gray-600 hover:text-pink-600 transition"><i className="fab fa-instagram text-xl mr-2"></i> @zahsstudio</a>
+              <p className="text-gray-600 mb-2 font-medium">
+                <i className="fas fa-map-marker-alt text-pink-500 mr-2"></i> 
+                653 Mockridge Terrace, Milton, ON L9T 8V7
+              </p>
+              <p className="text-gray-600 mb-2">
+                <a href="tel:+19058784247" className="hover:text-pink-600 transition">
+                  <i className="fas fa-phone-alt text-pink-500 mr-2"></i> +1 905-878-4247
+                </a>
+              </p>
+              <a href={instagramUrl} target="_blank" rel="noreferrer" className="text-gray-600 hover:text-pink-600 transition"><i className="fab fa-instagram text-xl mr-2"></i> @zahsstudio</a>
             </div>
           </div>
         </div>
@@ -365,10 +382,15 @@ const App = () => {
                <span className="font-serif text-2xl font-bold tracking-wide">Zah’s Studio</span>
             </div>
             <p className="text-gray-400 text-sm">Luxury beauty services in Milton, ON.</p>
+            <p className="text-gray-400 text-sm mt-2">
+              <a href="tel:+19058784247" className="hover:text-white transition">
+                <i className="fas fa-phone mr-2"></i> +1 905-878-4247
+              </a>
+            </p>
           </div>
           
           <div className="flex space-x-6 mb-6 md:mb-0">
-            <a href="#" className="text-gray-400 hover:text-white transition"><i className="fab fa-instagram text-2xl"></i></a>
+            <a href={instagramUrl} target="_blank" rel="noreferrer" className="text-gray-400 hover:text-white transition"><i className="fab fa-instagram text-2xl"></i></a>
             <a href="#" className="text-gray-400 hover:text-white transition"><i className="fab fa-facebook text-2xl"></i></a>
             <a href="#" className="text-gray-400 hover:text-white transition"><i className="fab fa-tiktok text-2xl"></i></a>
           </div>
