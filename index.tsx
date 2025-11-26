@@ -265,32 +265,70 @@ const App = () => {
               <p className="text-gray-500">Ready to glow? Fill out the form below.</p>
             </div>
             
-            <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
+            <form 
+              className="space-y-4" 
+              action="https://formspree.io/f/mwpdpeww" 
+              method="POST"
+            >
+              {/* Formspree Subject */}
+              <input type="hidden" name="_subject" value="New Appointment Request from Zah's Studio Website" />
+
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">Your Name</label>
-                <input type="text" className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-pink-500 focus:ring-2 focus:ring-pink-200 outline-none transition" placeholder="Jane Doe" required />
+                <input 
+                  type="text" 
+                  name="name"
+                  className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-pink-500 focus:ring-2 focus:ring-pink-200 outline-none transition" 
+                  placeholder="Jane Doe" 
+                  required 
+                />
               </div>
               
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
-                <input type="tel" className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-pink-500 focus:ring-2 focus:ring-pink-200 outline-none transition" placeholder="(555) 123-4567" required />
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+                  <input 
+                    type="tel" 
+                    name="phone"
+                    className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-pink-500 focus:ring-2 focus:ring-pink-200 outline-none transition" 
+                    placeholder="(555) 123-4567" 
+                    required 
+                  />
+                </div>
+                <div>
+                   <label className="block text-sm font-medium text-gray-700 mb-1">Email (Optional)</label>
+                   <input 
+                     type="email" 
+                     name="email"
+                     className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-pink-500 focus:ring-2 focus:ring-pink-200 outline-none transition" 
+                     placeholder="jane@example.com" 
+                   />
+                </div>
               </div>
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">Service Interested In</label>
-                <select className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-pink-500 focus:ring-2 focus:ring-pink-200 outline-none transition">
-                  <option>Eyelash Extensions</option>
-                  <option>Hair Styling / Color</option>
-                  <option>Nails / Mani Pedi</option>
-                  <option>Facial / Skincare</option>
-                  <option>Brows / Waxing</option>
-                  <option>Other</option>
+                <select 
+                  name="service"
+                  className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-pink-500 focus:ring-2 focus:ring-pink-200 outline-none transition"
+                >
+                  <option value="Eyelash Extensions">Eyelash Extensions</option>
+                  <option value="Hair Styling / Color">Hair Styling / Color</option>
+                  <option value="Nails / Mani Pedi">Nails / Mani Pedi</option>
+                  <option value="Facial / Skincare">Facial / Skincare</option>
+                  <option value="Brows / Waxing">Brows / Waxing</option>
+                  <option value="Other">Other</option>
                 </select>
               </div>
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">Preferred Date/Time</label>
-                <input type="text" className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-pink-500 focus:ring-2 focus:ring-pink-200 outline-none transition" placeholder="e.g. Friday afternoon" />
+                <input 
+                  type="text" 
+                  name="preferred_time"
+                  className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-pink-500 focus:ring-2 focus:ring-pink-200 outline-none transition" 
+                  placeholder="e.g. Friday afternoon" 
+                />
               </div>
 
               <button type="submit" className="w-full bg-pink-500 hover:bg-pink-600 text-white font-bold py-4 rounded-lg shadow-md transition transform active:scale-95 mt-4">
